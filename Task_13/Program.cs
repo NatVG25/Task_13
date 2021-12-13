@@ -10,19 +10,20 @@ namespace Task_13
     {
         static void Main(string[] args)
         {
-            Building building = new Building("ул.8 марта, 12", 74, 21, 52);
-            building.Print();
-            MultiBuilding multiBuilding = new MultiBuilding("ул. 8 марта, 18", 56, 23, -87, -25);
-            multiBuilding.Print();
+            Building building = new Building("ул.8 марта, 12", 74, 21, 52); //создаем экземпляр класса Building
+            building.Print(); //выводим на консоль информацию о здании методом Print
+           
+            MultiBuilding multiBuilding = new MultiBuilding("ул. 8 марта, 18", 56, 23, 87, 15); //создаем экземпляр класса MultiBuilding
+            multiBuilding.Print(); //выводим на консоль информацию о здании методом Print
             Console.ReadKey();
         }
     }
     class Building
     {
         public string address { get; set; } //автосвойство
-        int length;
-        int width;
-        int height;
+        int length; //поле
+        int width; //поле
+        int height; //поле
                   
         public int Lenght //свойство
         {
@@ -80,15 +81,15 @@ namespace Task_13
             }
         }
         
-        public Building(string address, int lenght, int width, int height)
+        public Building(string address, int lenght, int width, int height) //конструктор родительского класса
         {
             this.address = address;
-            this.length = lenght;
-            this.width = width;
-            this.height = height;
+            this.Lenght = lenght;
+            this.Width = width;
+            this.Height = height;
         }
 
-        public void Print()
+        public void Print() //метод вывода информации о здании
         {
             Console.WriteLine("Здание по адресу:{0} имеет длину {1} м, ширину {2} м, высоту {3} м", address, length, width, height);
         }
@@ -118,7 +119,7 @@ namespace Task_13
         public MultiBuilding (string address, int lenght, int width, int height, int floor)
             :base(address, lenght, width, height) //вызываем родительский конструктор
         {
-            this.floor = floor;
+            this.Floor = floor;
         }
         public void Print()
         {
